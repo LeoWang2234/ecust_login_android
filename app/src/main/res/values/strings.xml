@@ -1,4 +1,83 @@
 <resources>
-    <string name="app_name">ENET</string>
+    <string name="app_name">ECUST</string>
+    <string name="large_text">
+        still consider what should be put here...
+    </string>
     <string name="action_settings">Settings</string>
+    <string-array name="pref_timeout_titles">
+        <item>100ms</item>
+        <item>200ms</item>
+        <item>400ms</item>
+        <item>1s</item>
+        <item>不限</item>
+    </string-array>
+    <string-array name="pref_timeout_values">
+        <item>100</item>
+        <item>200</item>
+        <item>400</item>
+        <item>1000</item>
+        <item>-1</item>
+    </string-array>
+    <string name="next">next</string>
+    <string name="permission_request">need one more permission may be...</string>
+    <string name="permission_location_detail">In Android 6.0+,
+        scan the wifi need the location perssion.The app will scan the wifi only when you press the connect button with wifi not connected.</string>
+
+    <string-array name="pref_relogin_times_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="pref_relogin_times_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+    </string-array>
+    <string name="title_portal_server">Authentication Server IP</string>
+    <string name="summary_portal_server">IP of p.nju.edu.cn,leave blank for default DNS</string>
+    <string name="title_bras_server">Server IP of Bras</string>
+    <string name="summary_bras_server">IP of bras.nju.edu.cn,leave blank for default DNS</string>
+    <string-array name="pref_notification_freqeucy_title">
+        <item>Always shows</item>
+        <item>Shows when connected to NJU WLAN</item>
+        <item>Never shows</item>
+    </string-array>
+    <string-array name="pref_notification_freqeucy_values">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+    <string name="pref_scan_wifi_summary">If the wifi is not connected When you press login button,the app will scan the wifi and connect to NJU WLAN nearby</string>
+    <string name="pref_login_on_activity_start_title">login on launching</string>
+    <string name="pref_title_account_catagory">Account</string>
+    <string name="scan_and_connect">Refresh wlan and login</string>
+    <string name="refresh">Refresh</string>
+    <string name="login">Login</string>
+    <string name="no_wifi">No WiFi Connecttion</string>
+    <string name="NJUWLAN">ECUST WLAN</string>
+    <string name="Unknown_WLAN">Unknown WLAN</string>
+    <string name="internet_available">Internet Available</string>
+    <string name="internet_unavailable">Internet Unavailable</string>
+    <string name="others">Others</string>
+    <string name="about">About ECUST</string>
+    <string name="check_update">Check Update</string>
+    <string name="author_email">wangcheng2234@163.com</string>
+    <string name="feedback">Feedback</string>
+    <string name="send_email">send email to developer?</string>
+    <string name="version">version:</string>
+    <string name="author" >Author:wangcheng2234@163.com</string>
+    <string name="githubLink" >Project on Github</string>
+    <string name="connect_fail">ecust.edu.cn not available</string>
+    <string name="need_auth">the network need sign in</string>
+    <string name="disconnect">logout</string>
+    <string name="pull_down_notification">pull down for more menus</string>
+    <string name="remote_online">other device online</string>
+    <string name="force_login">force login</string>
+    <string name="force_login_button">Press button to force login</string>
+    <string name="connect_error">Connect Error</string>
+    <string name="summary_check_before_login">check devices online before login</string>
 </resources>
