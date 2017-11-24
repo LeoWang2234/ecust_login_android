@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -69,7 +68,7 @@ public class FirstSettingActivity extends AppCompatActivity {
 
 
     public void onNextStepButtonClicked(View view) {
-        Log.d("栈大小", fragmentManager.getBackStackEntryCount() + "");
+//        Log.d("栈大小", fragmentManager.getBackStackEntryCount() + "");
         int stackSize = fragmentManager.getBackStackEntryCount();
         fragments.get(stackSize).handle(view);
         if (stackSize < fragments.size() - 1) {

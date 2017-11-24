@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -54,7 +53,7 @@ class Login {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                Log.i("Connecting", "connecting ...............");
+//                Log.i("Connecting", "connecting ...............");
                 String redirectUrl = Login.this.sendGet();
                 String[] macAndIP = Login.this.getMacAndIP(redirectUrl);
 //                System.out.println("***********" + macAndIP[0] + "*******" + macAndIP[1]);
@@ -91,7 +90,7 @@ class Login {
         BufferedReader in = null;
         try {
 //            String urlNameString = url + "?" + param;
-            String urlNameString = "http://login.ecust.edu.cn/&arubalp=07ab5286-6c88-4ee7-997d-1563e8afb4";
+            String urlNameString = "http://172.20.3.90/cgi-bin/login?cmd=redirect&arubalp=7cc24a6f-ca75-477c-89fa-5858bec3c5";
 //            String urlNameString = "172.20.3.81";
             URL realUrl = new URL(urlNameString);
             // 打开和URL之间的连接
@@ -99,24 +98,17 @@ class Login {
             // 设置通用的请求属性
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("connection", "Keep-Alive");
+//            connection.setRequestProperty("user-agent",
+//                    "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
             // 关闭重定向
-            connection.setInstanceFollowRedirects(false);
-
-            // 设置200毫秒超时时间
-            connection.setConnectTimeout(1000);
-
+            connection.setInstanceFollowRedirects(true);
             // 建立实际的连接
             connection.connect();
             // 获取所有响应头字段
             Map<String, List<String>> map = connection.getHeaderFields();
-            // 遍历所有的响应头字段
-            for (String key : map.keySet()) {
-                System.out.println(key + "--->" + map.get(key));
-                if (key != null && key.equals("Location")) {
-                    result = String.valueOf(map.get(key));
-                    break;
-                }
-            }
+            connection.getResponseCode();
+            System.out.println( connection.getURL().toString());
+            result =  connection.getURL().toString();
         } catch (Exception e) {
 //            System.out.println("发送GET请求出现异常！" + e);
             android.os.Process.killProcess(android.os.Process.myPid());
@@ -128,6 +120,7 @@ class Login {
                     in.close();
                 }
             } catch (Exception e2) {
+
             } finally {
             }
         }
@@ -137,7 +130,7 @@ class Login {
     }
 
     private String[] getMacAndIP(String s) {
-        Log.i("man and ip", "mac......ip.........");
+//        Log.i("man and ip", "mac......ip.........");
         String mac = "";
         String ip = "";
         // 拿到了返回的重定向的地址

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,7 @@ public class AccountTypeFragment extends DeployFragment {
                 new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        Log.d("被点击", "点击");
+//                        Log.d("被点击", "点击");
                         getActivity().findViewById(R.id.nextStepButton).setEnabled(true);
 /*                        NextStepEnable nextStepEnable=new NextStepEnable();
                         nextStepEnable.addObserver();
@@ -63,7 +62,7 @@ public class AccountTypeFragment extends DeployFragment {
             spannableString.setSpan(new ForegroundColorSpan(Color.GRAY), index_newline, pnjuRadioText.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             radioButton.setText(spannableString);
         } else {
-            Log.e("内部错误", "first setting fragment中radio button文字不包含换行符");
+//            Log.e("内部错误", "first setting fragment中radio button文字不包含换行符");
         }
     }
 }

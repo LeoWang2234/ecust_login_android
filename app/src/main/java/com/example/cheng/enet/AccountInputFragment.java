@@ -79,8 +79,8 @@ public class AccountInputFragment extends DeployFragment {
 //        ConnectService.setPassword(getPassword());
         String username = getUserName();
         String password = getPassword();
-        System.out.println(getUserName()+"******************");
-        System.out.println(getPassword()+"&&&&&&&&&&&&&&&&&&&&&&");
+//        System.out.println(getUserName()+"******************");
+//        System.out.println(getPassword()+"&&&&&&&&&&&&&&&&&&&&&&");
         PrefFileManager.getAccountPref().edit().putString("username",username).apply();
         PrefFileManager.getAccountPref().edit().putString("password", password).apply();
         view.setEnabled(true);
