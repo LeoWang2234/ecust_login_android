@@ -53,12 +53,8 @@ class Login {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
-//                Log.i("Connecting", "connecting ...............");
                 String redirectUrl = Login.this.sendGet();
                 String[] macAndIP = Login.this.getMacAndIP(redirectUrl);
-//                System.out.println("***********" + macAndIP[0] + "*******" + macAndIP[1]);
-//                System.out.println("^^^^^^^^^^^^^" + macAndIP.length);
-//                System.out.println(macAndIP[0]);
                 if (macAndIP[0].length() == 0) {
                     Looper.prepare();
 //                    System.out.println("空空空空空");
@@ -90,7 +86,8 @@ class Login {
         BufferedReader in = null;
         try {
 //            String urlNameString = url + "?" + param;
-            String urlNameString = "http://172.20.3.90/cgi-bin/login?cmd=redirect&arubalp=7cc24a6f-ca75-477c-89fa-5858bec3c5";
+//            String urlNameString = "http://172.20.3.90/cgi-bin/login?cmd=redirect&arubalp=7cc24a6f-ca75-477c-89fa-5858bec3c5";
+            String urlNameString = "http://172.20.3.90/cgi-bin/login?cmd=redirect&arubalp=51081ef5-8953-4985-bb33-54e6779445";
 //            String urlNameString = "172.20.3.81";
             URL realUrl = new URL(urlNameString);
             // 打开和URL之间的连接
